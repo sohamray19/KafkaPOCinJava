@@ -1,13 +1,15 @@
-import java.util.*;
-import java.io.*;
-
 import avro1.avro.User;
+import com.opencsv.CSVReader;
+import com.opencsv.CSVReaderBuilder;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
-import com.opencsv.*;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
 import org.apache.kafka.common.serialization.IntegerSerializer;
+
+import java.io.FileReader;
+import java.util.List;
+import java.util.Properties;
 
 public class avro1 {
 
@@ -22,7 +24,7 @@ public class avro1 {
 
         KafkaProducer<Integer, User> producer = new KafkaProducer<Integer, User>(properties);
         try {
-            FileReader filereader = new FileReader("/home/exacon03/C2ImportCalEventSample.csv");
+            FileReader filereader = new FileReader("src/main/resources/C2ImportCalEventSample.csv");
             CSVReader csvReader = new CSVReaderBuilder(filereader)
                     .withSkipLines(1)
                     .build();
