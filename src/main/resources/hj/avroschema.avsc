@@ -1,0 +1,14 @@
+{"namespace": "avro1.avro",
+ "type": "record",
+ "name": "User",
+ "fields": [
+     {"name": "Id", "type": "string"},
+     {"name": "StartTime", "type": "string"},
+     {"name": "EndTime", "type": "string"},
+     {"name": "EndDate", "type": "string"},
+     {"name": "AllDayEvent", "type": "string"},
+     {"name": "EventTitle",  "type":"string"},
+     {"name": "NoEndTime", "type": "string"},
+     {"name": "EventDescription", "type": "string"}
+ ]
+}
